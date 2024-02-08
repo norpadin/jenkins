@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
+                cd prime
                 pip install -r requirements.txt
                 '''
             }
@@ -20,6 +21,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
+                cd prime
                 python3 hello.py
                 python3 hello.py --name=Norby
                 '''
@@ -29,6 +31,7 @@ pipeline {
             steps {
                 echo 'Deliver....'
                 sh '''
+                cd prime
                 python3 get_devices.py
                 '''
             }
